@@ -1,0 +1,32 @@
+; Name: Rania Rashad Fatht
+; Student ID: 2025002967
+; Section: 5
+; Question: Q3 - Count Even and Odd Numbers
+
+LXI H,2501H
+LDA 2500H
+MOV D,A
+
+MVI B,00H
+MVI C,00H
+
+LOOP: MOV A,M
+ANI 01H
+JZ EVEN
+
+INR C
+JMP NEXT
+
+EVEN: INR B
+
+NEXT: INX H
+DCR D
+JNZ LOOP
+
+MOV A,B
+STA 2600H
+
+MOV A,C
+STA 2601H
+
+HLT
