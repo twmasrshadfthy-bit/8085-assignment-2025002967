@@ -1,0 +1,20 @@
+; Name Rania Rashad Fathy
+; Student ID: 2025002967
+; Section: 5
+; Question: Q1 - 8-Bit Addition with Carry
+
+LDA 2500H
+MOV B,A
+LDA 2501H
+ADD B
+STA 2502H
+
+JNC NO_CARRY
+MVI A,01H
+JMP STORE_CARRY
+
+NO_CARRY: MVI A,00H
+
+STORE_CARRY: STA 2503H
+
+HLT 
